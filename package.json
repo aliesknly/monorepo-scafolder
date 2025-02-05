@@ -13,5 +13,9 @@
     "packages/*",
     "apps/*"
   ],
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.6.0",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "turbo": "^2.4.0"
+  }
 }
