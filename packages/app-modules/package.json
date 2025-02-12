@@ -1,0 +1,29 @@
+{
+	"name": "@repo/app-modules",
+	"type": "module",
+	"main": "index.ts",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "tsc -w",
+		"build": "tsc"
+	},
+	"packageManager": "yarn@4.6.0",
+	"devDependencies": {
+		"@repo/typescript-config": "workspace:*",
+		"typescript": "^5.7.3"
+	},
+	"exports": {
+		"./user": {
+			"types": "./user/index.ts",
+			"default": "./dist/user/index.js"
+		},
+		"./utilities": {
+			"types": "./utilities/index.ts",
+			"default": "./dist/utilities/index.js"
+		},
+		".": {
+			"types": "./index.ts",
+			"default": "./dist/index.js"
+		}
+	}
+}
