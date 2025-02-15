@@ -1,11 +1,11 @@
 import {
-	ForApiAuthRepository,
-	UserAuthRepository,
+	type ForApiAuthRepository,
+	type UserAuthRepository,
 	LoginUserDto,
 	RegisterUserDto,
-} from "@repo/app-modules/src/user";
+} from "@repo/app-modules/user";
 import { apiHandleError, JwtTokenUtility } from "../../../../utilities";
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 
 export class ApiAuthControllerRepositoryImp implements ForApiAuthRepository {
 	private handleError: (error: unknown, res: Response) => void;
@@ -14,7 +14,7 @@ export class ApiAuthControllerRepositoryImp implements ForApiAuthRepository {
 		this.handleError = apiHandleError;
 	}
 
-	login = (req: Request, res: any) => {
+	login = (req: Request, res: Response) => {
 		const [error, userData] = LoginUserDto.login(req.body);
 
 		if (error) {

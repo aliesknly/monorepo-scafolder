@@ -1,5 +1,5 @@
-import express, { Express, Router } from "express";
-import path from "path";
+import express, { type Express, Router } from "express";
+import path from "node:path";
 
 interface APIOptionsSInterface {
 	port: number;
