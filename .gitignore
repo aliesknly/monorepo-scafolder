@@ -1,7 +1,7 @@
 .turbo
 node_modules
 .yarn
-*/dist
+*/dist/*/*
 .vscode
 .env
 .editorconfig
