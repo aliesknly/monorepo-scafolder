@@ -1,29 +1,34 @@
 {
 	"name": "@repo/app-modules",
-	"type": "module",
-	"main": "index.ts",
 	"version": "1.0.0",
+	"type": "module",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"dev": "tsc -w",
-		"build": "tsc"
+		"build": "tsup"
 	},
-	"packageManager": "yarn@4.6.0",
 	"devDependencies": {
 		"@repo/typescript-config": "workspace:*",
+		"tsup": "^8.3.6",
 		"typescript": "^5.7.3"
 	},
 	"exports": {
 		"./user": {
-			"types": "./user/index.ts",
+			"types": "./dist/user/index.d.ts",
+			"require": "./dist/user/index.cjs",
 			"default": "./dist/user/index.js"
 		},
 		"./utilities": {
-			"types": "./utilities/index.ts",
+			"types": "./dist/utilities/index.d.ts",
+			"require": "./dist/utilities/index.cjs",
 			"default": "./dist/utilities/index.js"
 		},
 		".": {
-			"types": "./index.ts",
+			"types": "./dis/index.ts",
 			"default": "./dist/index.js"
 		}
-	}
+	},
+	"packageManager": "yarn@4.6.0"
 }
