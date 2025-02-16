@@ -21,7 +21,9 @@ WORKDIR /app
 
 # First install dependencies (as they change less often)
 COPY --from=builder /app/out/json/ .
-RUN yarn install
+COPY --from=builder /app/packages ./packages
+
+RUN yarn install --frozen-lockfile --prefer-offline
 
 # Build the project and its dependencies
 COPY --from=builder /app/out/full/ .
