@@ -29,6 +29,5 @@
 			"types": "./dis/index.ts",
 			"default": "./dist/index.js"
 		}
-	},
-	"packageManager": "yarn@4.6.0"
+	}
 }
